@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { INews } from "../interfaces/INews"
 import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap"
-import { Link } from 'react-router-dom'
 import { format, parseISO } from 'date-fns'
 
 
