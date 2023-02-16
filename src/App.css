@@ -51,10 +51,14 @@ img.details-img {
   height: 700px;
 }
 
-.spinner {
-  margin: 50% 50% 0;
+.spinner-ux {
+  margin: 50% 50% 0 !important;
 }
 
-.alert {
-  margin: 20% 40% auto;
+.alert-ux {
+  margin: 20% 40% auto !important;
+}
+
+.date-site {
+  font-size: 13px;
 }

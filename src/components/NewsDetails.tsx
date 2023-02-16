@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { INews } from "../interfaces/INews"
 import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import { format, parseISO } from 'date-fns'
 
 
 
@@ -44,8 +45,8 @@ const NewsDetails = () => {
 
     return (
         <>
-            {isLoading && <Spinner animation="border" variant="primary" />}
-            {isError && <Alert variant="danger">Aww Snap 😐</Alert>}
+            {isLoading && <Spinner className='spinner-ux' animation="border" variant="primary" />}
+            {isError && <Alert className='alert-ux' variant="danger">Aww Snap 😐</Alert>}
             {currentNews && (<Container className='my-5'>
                 <Row className='justify-content-center'>
                     <Col className="col-12">
@@ -56,7 +57,8 @@ const NewsDetails = () => {
                                 <Card.Text>
                                     {currentNews.summary}
                                 </Card.Text>
-                                <div>Published: {currentNews.publishedAt.toString().split("T")[0]}, {currentNews.newsSite}</div>
+                                <div>Published: {format(parseISO(currentNews.publishedAt.toString()), 'dd.MM.yyyy')}, {currentNews.newsSite}</div>
+
                                 <Link to={currentNews.url}>
                                     <div className='mt-3'>Continue reading...</div>
                                 </Link>

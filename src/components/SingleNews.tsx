@@ -1,6 +1,7 @@
 import { ISingleNews } from "../interfaces/ISingleNews"
 import { Col, Card } from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import { format, parseISO } from "date-fns"
 
 
 const SingleNews = ({ news }: ISingleNews) => {
@@ -12,6 +13,9 @@ const SingleNews = ({ news }: ISingleNews) => {
                     <Card.Title className="title-line-clamp">{news.title}</Card.Title>
                     <Card.Text className="summary-line-clamp">
                         {news.summary}
+                    </Card.Text>
+                    <Card.Text className="date-site">
+                        {format(parseISO(news.publishedAt.toString()), 'dd.MM.yyyy')}, {news.newsSite}
                     </Card.Text>
                     <Link to={"/details/" + news.id}>
                         <div className="d-flex justify-content-end">More...</div>

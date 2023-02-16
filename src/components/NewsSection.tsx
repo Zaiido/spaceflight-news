@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { INews } from "../interfaces/INews"
 import SingleNews from "./SingleNews"
 import { Container, Row, Spinner, Alert } from "react-bootstrap"
+import JumbotronComponent from "./JumbotronComponent"
 
 
 const NewsSection = () => {
@@ -38,8 +39,9 @@ const NewsSection = () => {
 
     return (
         <>
-            {isLoading && <Spinner animation="border" variant="primary" />}
-            {isError && <Alert variant="danger">Aww Snap 😐</Alert>}
+            {isLoading && <Spinner className="spinner-ux" animation="border" variant="primary" />}
+            {isError && <Alert className="alert-ux" variant="danger">Aww Snap 😐</Alert>}
+            <JumbotronComponent />
             <Container className="my-5">
                 <Row>
                     {news.map((n) =>
