@@ -5,14 +5,10 @@ export interface INews {
     imageUrl:    string;
     newsSite:    string;
     summary:     string;
-    publishedAt: Date;
-    updatedAt:   Date;
+    publishedAt: string;
+    updatedAt:   string;
     featured:    boolean;
-    launches:    ILaunch[];
-    events:      any[];
+    launches:    [];
+    events:      [];
 }
 
-export interface ILaunch {
-    id:       string;
-    provider: string;
-}

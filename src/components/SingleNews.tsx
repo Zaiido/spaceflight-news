@@ -15,7 +15,7 @@ const SingleNews = ({ article }: ISingleNews) => {
                         {article.summary}
                     </Card.Text>
                     <Card.Text className="date-site">
-                        {format(parseISO(article.publishedAt.toString()), 'dd.MM.yyyy')}, {article.newsSite}
+                        {format(parseISO(article.publishedAt), 'dd.MM.yyyy')}, {article.newsSite}
                     </Card.Text>
                     <Link to={"/details/" + article.id}>
                         <div className="d-flex justify-content-end">More...</div>
