@@ -44,8 +44,8 @@ const NewsSection = () => {
             <JumbotronComponent />
             <Container className="my-5">
                 <Row>
-                    {news.map((n) =>
-                        <SingleNews news={n} key={n.id} />)}
+                    {news.map((article) =>
+                        <SingleNews article={article} key={article.id} />)}
                 </Row>
             </Container>
         </>

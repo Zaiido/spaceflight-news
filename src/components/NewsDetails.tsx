@@ -9,7 +9,7 @@ import { format, parseISO } from 'date-fns'
 
 const NewsDetails = () => {
 
-    const [currentNews, setCurrentNews] = useState<null | INews>(null)
+    const [currentArticle, setCurrentArticle] = useState<null | INews>(null)
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
@@ -26,8 +26,8 @@ const NewsDetails = () => {
 
             let response = await fetch("https://api.spaceflightnewsapi.net/v3/articles/" + params.id)
             if (response.ok) {
-                let currentNewsDetails = await response.json()
-                setCurrentNews(currentNewsDetails)
+                let currentArticleDetails = await response.json()
+                setCurrentArticle(currentArticleDetails)
                 setIsLoading(false)
             } else {
                 setIsError(true)
@@ -47,19 +47,19 @@ const NewsDetails = () => {
         <>
             {isLoading && <Spinner className='spinner-ux' animation="border" variant="primary" />}
             {isError && <Alert className='alert-ux' variant="danger">Aww Snap 😐</Alert>}
-            {currentNews && (<Container className='my-5'>
+            {currentArticle && (<Container className='my-5'>
                 <Row className='justify-content-center'>
                     <Col className="col-12">
                         <Card className="rounded-0">
-                            <Card.Img variant="top" src={currentNews.imageUrl} className="details-img" />
+                            <Card.Img variant="top" src={currentArticle.imageUrl} className="details-img" />
                             <Card.Body>
-                                <Card.Title>{currentNews.title}</Card.Title>
+                                <Card.Title>{currentArticle.title}</Card.Title>
                                 <Card.Text>
-                                    {currentNews.summary}
+                                    {currentArticle.summary}
                                 </Card.Text>
-                                <div>Published: {format(parseISO(currentNews.publishedAt.toString()), 'dd.MM.yyyy')}, {currentNews.newsSite}</div>
+                                <div>Published: {format(parseISO(currentArticle.publishedAt.toString()), 'dd.MM.yyyy')}, {currentArticle.newsSite}</div>
 
-                                <Link to={currentNews.url}>
+                                <Link to={currentArticle.url}>
                                     <div className='mt-3'>Continue reading...</div>
                                 </Link>
                             </Card.Body>
