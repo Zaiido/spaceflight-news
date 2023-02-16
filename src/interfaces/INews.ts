@@ -5,10 +5,11 @@ export interface INews {
     imageUrl:    string;
     newsSite:    string;
     summary:     string;
-    publishedAt: string;
-    updatedAt:   string;
+    publishedAt: Date;
+    updatedAt:   Date;
     featured:    boolean;
     launches:    [];
     events:      [];
 }
+
 
