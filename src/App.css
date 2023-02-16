@@ -48,7 +48,7 @@
 }
 
 img.details-img {
-  height: 700px;
+  height: 600px;
 }
 
 .spinner-ux {
@@ -61,4 +61,41 @@ img.details-img {
 
 .date-site {
   font-size: 13px;
+}
+
+.carousel-item {
+  max-height: 500px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.856);
+  border-radius: 10px;
+}
+
+.carousel-caption a {
+  color: white;
+}
+
+.carousel-caption a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+.carousel-indicators li {
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.truncate {
+  width: 100%;
+  padding-inline: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

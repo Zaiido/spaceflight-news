@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { INews } from "../interfaces/INews"
 import SingleNews from "./SingleNews"
 import { Container, Row, Spinner, Alert } from "react-bootstrap"
-import JumbotronComponent from "./JumbotronComponent"
+import NewsCarousel from "./NewsCarousel"
 
 
 const NewsSection = () => {
@@ -41,7 +41,7 @@ const NewsSection = () => {
         <>
             {isLoading && <Spinner className="spinner-ux" animation="border" variant="primary" />}
             {isError && <Alert className="alert-ux" variant="danger">Aww Snap 😐</Alert>}
-            <JumbotronComponent />
+            <NewsCarousel articles={news.slice(0, 5)} />
             <Container className="my-5">
                 <Row>
                     {news.map((article) =>

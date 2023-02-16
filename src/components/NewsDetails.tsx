@@ -9,7 +9,7 @@ import { format, parseISO } from 'date-fns'
 
 const NewsDetails = () => {
 
-    const [currentArticle, setCurrentArticle] = useState<null | INews>(null)
+    const [currentArticle, setCurrentArticle] = useState<INews>()
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
@@ -52,7 +52,7 @@ const NewsDetails = () => {
                     <Col className="col-12">
                         <Card className="rounded-0">
                             <Card.Img variant="top" src={currentArticle.imageUrl} className="details-img" />
-                            <Card.Body>
+                            <Card.Body className='details-card-body'>
                                 <Card.Title>{currentArticle.title}</Card.Title>
                                 <Card.Text>
                                     {currentArticle.summary}
